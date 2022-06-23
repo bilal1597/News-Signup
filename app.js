@@ -33,19 +33,18 @@ app.post("/", function (req, res) {
        } ]
     };
 
-    const jsonData = JSON.stringify(data);    // phr stringif k through data compact kr liya
+    const jsonData = JSON.stringify(data);    /* phr stringif k through data compact kr liya*/
 
-    url = "https://us17.api.mailchimp.com/3.0/lists/ee0a191f";
+    url = "https://us17.api.mailchimp.com/3.0/lists/ee0a191f94";
 
-    const options = {                                              // ye post or authetication k liye Api ki guidelines k through
+    const options = {                                              // ye post or authetication k liye Api ki guidelines k through//
             method: "POST",
             auth: "Bilal:df940e56de8e06b836fc097770e45001-us17"
         }
 
-    const request = https.request(url, options , function (response) {      // constant options ko leliya us k through post krdya 
-                                                                 // "node.js" k request method through jis mn "url" or "options" le skty
+    const request = https.request(url, options , function (response) {      // constant options ko leliya us k through post krdya //
         if(response.statusCode === 200){
-          res.sendFile(__dirname + "/success.html" )   
+          res.sendFile(__dirname + "/success.html" )        // "node.js" k request method through jis mn "url" or "options" le skty//
         }
         else{
             res.sendFile(__dirname + "/failure.html")
@@ -65,8 +64,7 @@ app.post("/failure", function (req, res) {
 })
 
 app.listen(process.env.PORT || 3000, function () {      
-                                              // process.env.POST heroku k lye use hota woh apny hisab se port dega is lye 3000 port use hga
-    console.log("server is running on port 3000");    
+    console.log("server is running on port 3000");     // process.env.POST heroku k lye use hota woh apny hisab se port dega is lye 3000 port use hga
 })
 
 
